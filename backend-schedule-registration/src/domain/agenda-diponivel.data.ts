@@ -1,10 +1,10 @@
-import { CandidateData } from './candidate.data';
+import { CandidatoData } from './candidate.data';
 
 export interface AgendaDisponivelData {
-  id?: string;
+  id?: number;
   dia: string;
   hora: string;
-  candidate?: CandidateData;
+  candidate?: CandidatoData;
 }
 
 export const AgendaDisponivelData = Symbol('AgendaDisponivelData');

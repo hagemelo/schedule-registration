@@ -1,5 +1,5 @@
 export class AgendaDisponivelModel {
-  id?: string;
+  id?: number;
   dia: string;
   hora: string;
 

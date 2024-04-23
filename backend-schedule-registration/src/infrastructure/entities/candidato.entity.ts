@@ -3,12 +3,12 @@ import { ItinerarioInformativoEnum } from '@domain/constant/itinerario-informati
 import { PostoGraduacaoEnum } from '@domain/constant/posto-graducacao.enum';
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { AgendaDisponivelEntity } from './agenda-disponivel.entity';
-import { CandidateData } from '@domain/candidate.data';
+import { CandidatoData } from '@domain/candidate.data';
 
 @Entity('Candidato')
 export class CandidatoEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
   @Column({ name: 'nome', nullable: false })
   nome: string;
@@ -51,7 +51,7 @@ export class CandidatoEntity {
   )
   agendaSelecionada: AgendaDisponivelEntity;
 
-  public fromData(data: CandidateData): CandidatoEntity {
+  public fromData(data: CandidatoData): CandidatoEntity {
     const {
       id,
       nome,
@@ -84,7 +84,7 @@ export class CandidatoEntity {
     return this;
   }
 
-  public toData(): CandidateData {
+  public toData(): CandidatoData {
     const {
       id,
       nome,

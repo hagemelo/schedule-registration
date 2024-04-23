@@ -2,9 +2,10 @@ import { AnoEscolarEnum } from '@domain/constant/ano-escolar.enum';
 import { ItinerarioInformativoEnum } from '@domain/constant/itinerario-informativo.enum';
 import { PostoGraduacaoEnum } from '@domain/constant/posto-graducacao.enum';
 import { AgendaDisponivelModel } from './agenda-disponivel.model';
+import { CandidatoData } from '@domain/candidate.data';
 
 export class CandidatoModel {
-  id?: string;
+  id?: number;
   nome: string;
   cpf: string;
   cpfResponsavel: string;
@@ -17,7 +18,7 @@ export class CandidatoModel {
   itinerarioInformativo: ItinerarioInformativoEnum;
   agendaSelecionada?: AgendaDisponivelModel;
 
-  constructor(params: Partial<CandidatoModel>) {
+  constructor(params: Partial<CandidatoModel> | CandidatoData) {
     if (params.id) this.id = params.id;
     this.nome = params.nome || '';
     this.cpf = params.cpf || '';

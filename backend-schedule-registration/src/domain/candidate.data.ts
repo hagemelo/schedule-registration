@@ -3,8 +3,8 @@ import { AnoEscolarEnum } from './constant/ano-escolar.enum';
 import { ItinerarioInformativoEnum } from './constant/itinerario-informativo.enum';
 import { PostoGraduacaoEnum } from './constant/posto-graducacao.enum';
 
-export interface CandidateData {
-  id?: string;
+export interface CandidatoData {
+  id?: number;
   nome: string;
   cpf: string;
   cpfResponsavel: string;
@@ -18,4 +18,4 @@ export interface CandidateData {
   agendaSelecionada?: AgendaDisponivelData;
 }
 
-export const CandidateData = Symbol('CandidateData');
+export const CandidatoData = Symbol('CandidatoData');

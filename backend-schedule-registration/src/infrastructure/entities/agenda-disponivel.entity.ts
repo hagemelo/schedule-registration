@@ -11,8 +11,8 @@ import { AgendaDisponivelData } from '@domain/agenda-diponivel.data';
 
 @Entity('Agenda_disponivel')
 export class AgendaDisponivelEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
 
   @Column({ name: 'dia', nullable: false })
   dia: string;
@@ -29,7 +29,9 @@ export class AgendaDisponivelEntity {
     this.id = id;
     this.dia = dia;
     this.hora = hora;
-    this.candidate = candidate?  new CandidatoEntity().fromData(candidate, cp), candidate;
+    this.candidate = candidate
+      ? new CandidatoEntity().fromData(candidate)
+      : null;
     return this;
   }
 
@@ -40,7 +42,7 @@ export class AgendaDisponivelEntity {
       id,
       dia,
       hora,
-      candidate:candidate.toData(),
+      candidate: candidate.toData(),
     };
   }
 }
