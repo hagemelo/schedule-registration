@@ -31,7 +31,7 @@ export class CandidatoEntity {
   @Column({ name: 'ano_escolar', type: 'enum', enum: AnoEscolarEnum })
   anoEscolar: AnoEscolarEnum;
 
-  @Column({ name: 'nome_responsavel', nullable: false })
+  @Column({ name: 'colegio', nullable: false })
   colegio: string;
 
   @Column({ name: 'posto_graduacao', type: 'enum', enum: PostoGraduacaoEnum })

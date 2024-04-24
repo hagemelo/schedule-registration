@@ -4,6 +4,10 @@ import dbConfig from '@config/database/config';
 import { addTransactionalDataSource } from 'typeorm-transactional';
 import { DataSource } from 'typeorm';
 import { AgendaDisponivelController } from '@interface/agenda-disponivel.controller';
+import { AgendaDisponivelRepository } from './infrastructure/repositories/agenda-disponivel.repository';
+import { AgendaDisponivelUsecase } from '@application/agenda-disponivel.usecase';
+import { AgendaDisponivelEntity } from './infrastructure/entities/agenda-disponivel.entity';
+import { CandidatoEntity } from './infrastructure/entities/candidato.entity';
 
 @Module({
   imports: [
@@ -19,8 +23,9 @@ import { AgendaDisponivelController } from '@interface/agenda-disponivel.control
         return addTransactionalDataSource(new DataSource(options));
       },
     }),
+    TypeOrmModule.forFeature([AgendaDisponivelEntity, CandidatoEntity]),
   ],
   controllers: [AgendaDisponivelController],
-  providers: [],
+  providers: [AgendaDisponivelRepository, AgendaDisponivelUsecase],
 })
 export class BackendScheduleRegistrationModule {}

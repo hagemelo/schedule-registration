@@ -42,7 +42,7 @@ export class AgendaDisponivelEntity {
       id,
       dia,
       hora,
-      candidate: candidate.toData(),
+      candidate: candidate ? candidate.toData() : null,
     };
   }
 }
