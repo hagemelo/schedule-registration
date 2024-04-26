@@ -9,10 +9,14 @@ export class AgendaDisponivelUsecase {
     private readonly repository: AgendaDisponivelRepository,
   ) {}
 
-  public async createAgendaDisponivel(
+  async createAgendaDisponivel(
     data: AgendaDisponivelData,
   ): Promise<AgendaDisponivelData> {
     const result = await this.repository.persist(data);
     return result;
+  }
+
+  async loadAgendasDisponiveis(): Promise<AgendaDisponivelData[]> {
+    return this.repository.loadAll();
   }
 }

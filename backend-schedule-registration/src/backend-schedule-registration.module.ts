@@ -8,6 +8,9 @@ import { AgendaDisponivelRepository } from './infrastructure/repositories/agenda
 import { AgendaDisponivelUsecase } from '@application/agenda-disponivel.usecase';
 import { AgendaDisponivelEntity } from './infrastructure/entities/agenda-disponivel.entity';
 import { CandidatoEntity } from './infrastructure/entities/candidato.entity';
+import { CandidatoController } from '@interface/candidato.controller';
+import { CandidatoUsecase } from '@application/candidato.usecase';
+import { CandidatoRepository } from './infrastructure/repositories/candidato.repository';
 
 @Module({
   imports: [
@@ -25,7 +28,12 @@ import { CandidatoEntity } from './infrastructure/entities/candidato.entity';
     }),
     TypeOrmModule.forFeature([AgendaDisponivelEntity, CandidatoEntity]),
   ],
-  controllers: [AgendaDisponivelController],
-  providers: [AgendaDisponivelRepository, AgendaDisponivelUsecase],
+  controllers: [AgendaDisponivelController, CandidatoController],
+  providers: [
+    AgendaDisponivelRepository,
+    AgendaDisponivelUsecase,
+    CandidatoUsecase,
+    CandidatoRepository,
+  ],
 })
 export class BackendScheduleRegistrationModule {}
