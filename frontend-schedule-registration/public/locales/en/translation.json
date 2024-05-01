@@ -1,3 +1,6 @@
 {
-    "tittle_form_home": "Schedule your registration"
+    "tittle_form_home": "Schedule your registration",
+    "agenda_selecionada_form_dia": "day",
+    "agenda_selecionada_form_hora": "Hour",
+    "agenda_selecionada_form_proximo": "Next"
 }

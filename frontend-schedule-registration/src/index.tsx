@@ -5,14 +5,13 @@ import "./i18n";
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/home';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootDiv = document.getElementById('root')!;
+
+const root = ReactDOM.createRoot(rootDiv);
 root.render(
   <React.StrictMode>
     <Home />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
