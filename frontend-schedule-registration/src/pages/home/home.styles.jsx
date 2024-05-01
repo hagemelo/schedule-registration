@@ -18,5 +18,14 @@ const CentralDiv = styled.div`
     background: #ececec;
 `;
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { HomerContainer, CentralDiv };
+const Tittle = styled.h2`
+    text-align: center;
+`;
+
+const HomeStyles = {
+    HomerContainer,
+    CentralDiv,
+    Tittle
+}
+
+export default HomeStyles;
