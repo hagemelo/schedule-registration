@@ -1,0 +1,14 @@
+# package directories
+node_modules
+docker
+
+# Serverless directories
+.serverless
+*.odp
+*.pptx
+.vs
+.build
+.env
+dist
+coverage
+.webpack
