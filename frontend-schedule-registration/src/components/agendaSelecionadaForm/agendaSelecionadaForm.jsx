@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoadAgendaSelecionada } from '../../hook/useLoadAgendaSelecionada.tsx';
+import Dropdown from '../dropdow/dropdow.jsx';
 
 const AgendaSelecionadaForm = () => {
 
@@ -8,7 +9,9 @@ const AgendaSelecionadaForm = () => {
     const { isError,
         formData,
         handleChange,
-        handleSubmit,} = useLoadAgendaSelecionada();
+        handleSubmit,selectedItem,
+        handleSelect,
+        diasDisponiveis} = useLoadAgendaSelecionada();
 
     return (
         <div>
@@ -16,13 +19,10 @@ const AgendaSelecionadaForm = () => {
             <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="day">{t("agenda_selecionada_form_dia")}:</label>
-                <input
-                    type="text"
-                    id="dia"
-                    name="dia"
-                    value={formData.dia}
-                    onChange={handleChange}
-                />
+                <div>
+                    <Dropdown options={diasDisponiveis} onSelect={handleSelect} />
+                    {selectedItem && <p>You selected: {selectedItem}</p>}
+                </div>
             </div>
             <div>
                 <label htmlFor="Hora">{t("agenda_selecionada_form_hora")}:</label>

@@ -17,7 +17,7 @@ const Home = () => {
             <Navbar></Navbar>
             <HomerContainer >
                 <CentralDiv>
-                    <Tittle>{t("tittle_form_home")}</Tittle>
+                    <Tittle>{t('tittle_form_home')}</Tittle>
                     <AgendaSelecionadaForm></AgendaSelecionadaForm>
                 </CentralDiv>
             </HomerContainer>
